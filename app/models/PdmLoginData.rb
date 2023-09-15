@@ -1,0 +1,2 @@
+class PdmLoginData < PdmLogDatum
+end

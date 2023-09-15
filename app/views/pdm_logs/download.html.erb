@@ -1,0 +1,40 @@
+<script>
+function onClick() {
+    let dateSelectElement = document.getElementById("date-select");
+
+    let dateSelectValue = dateSelectElement.value;
+
+    let userSelectElement = document.getElementById("users-select");
+
+    let userSelectValue = userSelectElement.value;
+
+}
+</script>
+
+<h1>다운로드 로그</h1>
+<br>
+<input type="date">
+
+<select name="date-option" id="date-select">
+    <option value="">검색 옵션을 골라주세요</option>
+    <option value="month">월</option>
+    <option value="year">년</option>
+    <option value="range">기간</option>
+</select>
+
+<% if @user_data %>
+    <select name="users" id="users-select">
+    <option value="All">All</option>
+        <% @user_data.each do |user| %>
+            <option value=<%= user['user_name'] %>><%= user['user_name'] %></option>
+        <% end %>
+    </select>
+<% end %>
+
+<button type="button">검색</button>
+<br><br>
+data:
+<br><br>
+<%= (@result_data) %>
+<%# <%= (@result_array) %> %>
+<%# <%= (@json_array3) %> %>
